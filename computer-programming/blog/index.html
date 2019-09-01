@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: rgb(30,34,39);
+      color: #fff;
+      font-family: Lato, sans-serif;
+    }
+    
+    h2 { font-size: 1.6em; }
+    
+    .container {
+      max-width: 80%;
+      margin: auto;
+      /*text-align: justify;*/
+    }
+    
+    pre {
+      background: #282c34;
+      color: #fff;
+      padding: 1em;
+      font-family: monospace;
+      border: 1px solid #dddbcc;
+      border-radius: 3px;
+    }
+    
+    code {
+      padding: 2px 4px;
+      background-color: #f1f0ea;
+      color: #444;
+      border-radius: 4px;
+    }
+    
+    a {
+      color: #00a0fc;
+      font-weight: bold;
+      font-style: italic;
+      text-decoration: none;
+      border-bottom: 1px dotted #00a0fc;
+      padding: 0 0 2px;
+    }
+    
+    ul {
+      list-style: square;
+      /*text-align: center;*/
+    }
+    
+    hr {
+      height: 12px;
+      border: 0;
+      box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.5);
+    }
+  </style>
+  <title>Project: Blog</title>
+</head>
+
+<body>
+  <h1 id="top">Gabiola's blog</h1>
+  
+  <h3>Recent Posts</h3>
+  <ul>
+    <li><a href="#img">HTML img</a></li>
+    <li><a href="#doctype">What is the Doctype</a></li>
+    <li><a href="#html">HTML Introduction</a></li>
+  </ul>
+  
+  <div class="container">
+    <h2 id="img">HTML img</h2>
+    <h6>Posted on Apr 12, 2019</h6>
+    
+    <p>Images can be displayed using the <code>img</code> tag.</p>
+    <p>This tag accepts a <code>src</code> attribute, which we use to set the image source:</p>
+    
+    <pre>&lt;img src="image.png" /&gt;</pre>
+    
+    <p>We can use a wide set of images. The most common ones are PNG, JPEG, GIF, SVG and more recently WebP.</p>
+    
+    <p>The HTML standard requires an alt attribute to be present, to describe the image. This is used by screen readers and also by search engine bots:</p>
+    
+    <pre>&lt;img src="dog.png" alt="A picture of a dog" /&gt;</pre>
+    
+    <p>You can set the <code>width</code> and <code>height</code> attributes to set the space that the element will take, so that the browser can account for it and it does not change the layout when it’s fully loaded. It takes a numeric value, expressed in pixels.</p>
+    
+    <pre>&lt;img src="dog.png"alt="A picture of a dog" width="300" 
+height="200" /&gt;</pre>
+    
+    <a href="#top">Back to top</a>
+    <hr>
+  </div>
+  
+  
+  <div class="container">
+    <h2 id="doctype">What is the Doctype</h2>
+    <h6>Posted on Feb 20, 2019</h6>
+    
+    <p>Any HTML document must start with a <em>Document Type Declaration</em> in the first line, which tells the browser the version of HTML used in the page.</p>
+    
+    <p>This doctype declaration is case insensitive:</p>
+    
+    <pre>&lt;!DOCTYPE html&gt;</pre>
+    
+    <p>tells the browser this is an HTML5 document. <a href="#top">Back to top</a></p>
+    <hr>
+  </div>
+  
+  
+  <div class="container">
+    <h2 id="html">HTML Introduction</h2>
+    <h6>Posted on Mar 3, 2019</h6>
+    
+    <p>HTML is a standard defined by the WHATWG, an acronym for Web Hypertext Application Technology Working Group, an organization formed by people working on the most popular web browser. This means it’s basically controlled by Google, Mozilla, Apple and Microsoft.</p>
+    
+    <a href="#top">Back to top</a>
+    <hr>
+  </div>
+  
+  <a href="#top">Back to top</a>
+
+</body>
+</html>
