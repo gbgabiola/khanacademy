@@ -117,7 +117,40 @@
     - Sign up for a Github account
     - Create a Github project for your website
     - Upload multi-file websites to Github
-
+- **CSS layout**
+  - `<span>` is inline level element to group text w/ no semantic meaning for styling purposes
+  - `<div>` is a block level element to group elements w/ no semantic meaning for styling purposes
+  - `width` sets the width of an element.
+  - `height` sets the height of an element.
+    - `auto` value will automatically adjust its height to allow its content to be displayed correctly.
+  - `overflow` specifies what should happen if content overflows an element's box.
+    - only works for block elements with a specified height.
+    - Value: `hidden`, `scroll`, `auto` and `visible` which is the default
+  - Box Model
+    - All HTML elements can be considered as boxes.
+    - "box model" is used when talking about design and layout.
+    - It consists of: margins, borders, padding, and the actual content.
+  - `margin` are used to create space around elements, outside of any defined borders.
+    - `auto` value lets the browser calculates the margin
+    - `%` specifies a margin in % of the width of the containing element
+  - `padding` are used to generate space around an element's content, inside of any defined borders.
+  - `border` is a shorthand property for `border-width`,  `border-style` and `border-color`; E.g. `border: 2px solid red`
+  - `position` specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky)
+    - `static` value is the default position of the HTML elements
+    - `relative` is positioned relative to its normal position
+      - Set the `top`, `right`, `bottom`, or `left` to adjust away from its normal position
+    - `absolute` is positioned relative to the nearest positioned ancestor
+    - `fixed` is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled
+    - `sticky` is positioned based on the user's scroll position
+  - `z-index` can have a positive or negative number that specifies the stack order of an element (which element should be placed in front of, or behind, the others)
+  - `float` is used for positioning and formatting content, E.g. let an image float left to the text in a container.
+    - Values: `left`, `right`, and `none` is the default
+  - `clear` specifies what elements can float beside the cleared element and on which side.
+    - Values: `left`, `right`, `none` which is the default and `both` for no floating elements allowed on either the left or the right side
+  - Planning a webpage
+    - Brainstorming: Use the "Yes, and..." approach
+    - Paper prototyping
+    - Wireframes: Using tools like balsamiq
 
 
 <!--

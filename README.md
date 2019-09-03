@@ -1,5 +1,7 @@
 # Khan Academy
 
+My Notes, Exercises, and Projects from Khan Academy Tracks/Courses
+
 - [ ] [Computer Programming](computer-programming#computer-programming)
   - [x] [Intro to JS: Drawing & Animation](computer-programming#intro-to-js-drawing--animation)
   - [ ] [Intro to HTML/CSS: Making webpages](computer-programming#intro-to-sql-querying-and-managing-data)
@@ -16,3 +18,4 @@
 - [Travel Webpage](computer-programming/travel-webpage)
 - [Recipe Book](computer-programming/recipe-book)
 - [Blog](computer-programming/blog)
+- [Event Invite](computer-programming/recipe-book)
