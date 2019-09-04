@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Project: Event invite</title>
-    <style>
-        
-    </style>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: gray;
+      text-align: center;
+      font-family: 'Amatic SC', cursive;
+    }
+    
+    .container {
+      width: 70%;
+      margin: auto;
+      background-color: #000;
+      color: #fff;
+    }
+    
+    hr {
+      overflow: visible; /* For IE */
+      max-width: 70%;
+      height: 30px;
+      border-style: solid;
+      border-color: #fff;
+      border-width: 1px 0 0 0;
+      border-radius: 20px;
+    }
+    
+    hr:before { /* Not really supposed to work, but does */
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: #fff;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+    }
+  </style>
+  <title>Project: Event invite</title>
 </head>
 <body>
-    <div id="container">
-        <h1 id="hello">Hello Friend,</h1>
-        <h2 id="invited">You're invited to a 
-            <span>Holiday Party</span>
-        </h2>
+  <div id="container">
+    <h1 id="invite">You Are invited
+      <div>to</div>
+        <span id="event">Gabiola's Holiday Party</span>
+      </h1>
+      <hr>
+      
+      <div>
+        <h2>Tuesday, December 28, 2019</h2>
+        <h3>at 5 o'clock in the evening</h3>
+      </div>
+      <hr>
         
-        <h3>Time of event:  </h3>
-        <ul id="when">
-            <li>Tuesday, August 19th</li>
-            <li>AT 5 PM</li>
-            <li>Place: Alliance Fellowship Hall</li>
-         </ul>
+      <div>
+        <h2>Alliance Fellowship Hall</h2>
+        <p>123 East Road</p>
+        <p>San Francisco, CA</p>
+      </div>
+      <hr>
     
-        <h3>Program Schedule</h3>
-        <div>
-            <p>6:00 - 6:30 PM</p>
-            <p>Session of join this party</p>
-        </div>
-        <div>
-            <p>7:00 - 8:30 PM</p>
-            <p>Launch time & some fun</p>
-        </div>
-        <div>
-            <p>8:30 - 9:00 PM</p>
-            <p>Dance with partner & drinks</p>
-        </div>
-        
-        <p>Join & Celecrate The Holiday Dinner Party!</p>
-    </div>
+    <p>Join & Celecrate The Holiday Dinner Party!</p>
+  </div>
     
 </body>
 </html>
