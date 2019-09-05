@@ -16,7 +16,7 @@
 - [Recipe Book](computer-programming/recipe-book)
 - [Blog](computer-programming/blog)
 - [Event Invite](computer-programming/recipe-book)
-
+- [Design a store database](computer-programming/design-a-store-database.sql)
 
 <!--
 ## [Advanced JS: Games & Visualizations](https://www.khanacademy.org/computing/computer-programming/programming-games-visualizations)
