@@ -7,6 +7,8 @@
 - [Web development tools](#web-development-tools)
 - [CSS layout](#css-layout)
 - [More CSS selectors](#more-css-selectors)
+- [Other ways to embed CSS](#other-ways-to-embed-css)
+- [Further learning](#further-learning)
 
 
 ## Intro to HTML
@@ -28,7 +30,7 @@
 - Headings are based on most important to least important, `<h1>` to `<h6>`
 - `<p>` tag is used to make paragraph.
 - browser ignores line breaks and whitespace, use `<br>` to render a line break
-- <em> is used to emphasize the word/s, `<strong>` will make the word/s bold to stand out
+- `<em>` is used to emphasize the word/s, `<strong>` will make the word/s bold to stand out
 - `<li>` to make a list inside of `<ul>` for unordered list or `<ol>` for ordered list
 - `<img>` to add image, `src` attribute to add/source the url of the image and `alt` attribute to add image description
 
@@ -169,3 +171,31 @@
   - add **100** for each `id`
   - add **10** for each `attribute`, `class` or pseudo-class
   - add **1** for each element name or pseudo-element
+
+
+## Other ways to embed CSS
+
+- using **inline CSS styles** may be used to apply a unique style for a single element `<h1 style="background: red; color: white">`
+  - Best to use inline styles is when prototyping a webpage to see what it looks like quickly
+  - **Note**: as much as possible avoid the inline styling to avoid messing on HTML
+- using **external stylesheets** can change the look of an entire website by changing just one file with a `.css` extension
+  - defined within the `link` element, inside the `head` section of an HTML page
+
+
+## Further learning
+
+- **Webpage design**
+  - **Picking good fonts**
+    - shouldn't use more than two or three font families on a page, and your fonts should pair nicely together, E.g. [Google Web Fonts](https://fonts.google.com/)
+  - **Picking good colors**
+    - use a **color palette** which is a range of colors that work well together and can be used for the various parts of your webpage, E.g. [Paletton](http://paletton.com/) tool lets you visualize different types of palettes: monochromatic, triads, adjacent colors, and tetrads
+    - As you decide on how your palette will translate into CSS, consider a few things:
+      - If you change the styling of links too much from the default, users may not realize they're links anymore.
+      - The colors of foreground/background text should contrast enough that your users don't need to squint. Check your colors in this [contrast checker](http://webaim.org/resources/contrastchecker/).
+      - Many humans are color blind. Some color combinations won't have sufficient contrast for them. Check your colors in this [color blindness simulator](http://www.color-blindness.com/coblis-color-blindness-simulator/).
+  - **Using whitespace well**
+    - **Whitespace** refers to any blank space between elements, and in CSS land, it usually comes from properties like padding, margin, and line-height
+  - **Starting from templates and frameworks**
+    - **template** is HTML and CSS that already looks like a complete webpage, often with fake content filled in, E.g. [OpenDesigns](http://www.opendesigns.org/)
+    - **CSS framework** is a collection of CSS rules that give you a great starting point for a slick website, E.g. [Bootstrap](https://getbootstrap.com/), [Foundation](https://foundation.zurb.com/), [Pure CSS](https://purecss.io/), [Topcoat](http://topcoat.io/), and etc.
+- **HTML validation** is a step to checkif the HTML are valid and no syntax errors, E.g. [W3C validator](https://validator.w3.org/) tool where you can paste or upload your file to check for html validity
