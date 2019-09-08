@@ -14,3 +14,9 @@
   - **Text**: like `text()` and `textSize()`
   - **Events**: like `draw()` and `mousePressed()`
   - **Math**: like `random()` and `dist()`
+
+
+## Resources
+
+- [Challenges](challenges/README.md)
+- [Projects](projects/README.md)
