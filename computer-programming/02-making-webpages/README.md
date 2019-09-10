@@ -9,6 +9,7 @@
 - [More CSS selectors](#more-css-selectors)
 - [Other ways to embed CSS](#other-ways-to-embed-css)
 - [Further learning](#further-learning)
+- [Resources](#resources)
 
 
 ## Intro to HTML
@@ -199,3 +200,9 @@
     - **template** is HTML and CSS that already looks like a complete webpage, often with fake content filled in, E.g. [OpenDesigns](http://www.opendesigns.org/)
     - **CSS framework** is a collection of CSS rules that give you a great starting point for a slick website, E.g. [Bootstrap](https://getbootstrap.com/), [Foundation](https://foundation.zurb.com/), [Pure CSS](https://purecss.io/), [Topcoat](http://topcoat.io/), and etc.
 - **HTML validation** is a step to checkif the HTML are valid and no syntax errors, E.g. [W3C validator](https://validator.w3.org/) tool where you can paste or upload your file to check for html validity
+
+
+## Resources
+
+- [Challenges](challenges.md)
+- [Projects](../projects#lists-of-projects)

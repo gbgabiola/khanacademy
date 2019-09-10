@@ -18,5 +18,5 @@
 
 ## Resources
 
-- [Challenges](challenges/README.md)
-- [Projects](projects/README.md)
+- [Challenges](challenges.md)
+- [Projects](../projects#lists-of-projects)
