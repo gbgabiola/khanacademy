@@ -25,11 +25,11 @@
 ## Intro to SQL: Querying and managing data
 
 - [x] [Design a store database](design-a-store-database.sql)
-- [ ] [Project Dig](project-dig.sql)
+- [x] [Project Dig](project-dig.sql)
 
 
 
-<!-- 
+<!--
 ## Advanced JS: Games & Visualizations
 ## Advanced JS: Natural Simulations
 ## HTML/JS: Making webpages interactive

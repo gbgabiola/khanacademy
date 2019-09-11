@@ -8,4 +8,4 @@
 - [x] [TODO list database stats](todo-list-database-stats.sql)
 - [x] [Gradebook](gradebook.sql)
 - [x] [Bobby's Hobbies](bobbys-hobbies.sql)
-- [ ] [Customer's orders](customers-orders.sql)
+- [x] [Customer's orders](customers-orders.sql)
