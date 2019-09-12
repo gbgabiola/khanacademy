@@ -38,14 +38,14 @@
   INSERT INTO groceries VALUES(6, "Chocolate syrup", 1, 4);
   ```
 
-  | id | name                | quantity | aisle |
-  |:--:|:------------------- | :------- | :---- |
-  | 1  | Bananas             | 4        | 7
-  | 2  | Peanut Butter       | 1        | 2
-  | 3  | Dark chocolate bars | 2        | 2
-  | 4  | Ice cream           | 1        | 12
-  | 5  | Cherries            | 6        | 2
-  | 6  | Chocolate syrup     | 1        | 4
+  |  id   | name                | quantity | aisle |
+  | :---: | :------------------ | :------- | :---- |
+  |   1   | Bananas             | 4        | 7     |
+  |   2   | Peanut Butter       | 1        | 2     |
+  |   3   | Dark chocolate bars | 2        | 2     |
+  |   4   | Ice cream           | 1        | 12    |
+  |   5   | Cherries            | 6        | 2     |
+  |   6   | Chocolate syrup     | 1        | 4     |
 
 - **Querying the table**
   - use `SELECT` to query your tables
@@ -111,70 +111,70 @@
 
     | student_name     | student_email        | test      | grade |
     | :--------------- | :------------------- | :-------- | :---- |
-    | Peter Rabbit     | peter@rabbit.com     | Nutrition | 95
-    | Alice Wonderland | alice@wonderland.com | Nutrition | 92
-    | Peter Rabbit     | peter@rabbit.com     | Chemistry | 85
-    | Alice Wonderland | alice@wonderland.com | Chemistry | 95
+    | Peter Rabbit     | peter@rabbit.com     | Nutrition | 95    |
+    | Alice Wonderland | alice@wonderland.com | Nutrition | 92    |
+    | Peter Rabbit     | peter@rabbit.com     | Chemistry | 85    |
+    | Alice Wonderland | alice@wonderland.com | Chemistry | 95    |
 
   - we might also have a table for logging what books each student reads:
 
     | student_name     | book_title                    | book_author    |
     | :--------------- | :---------------------------- | :------------- |
-    | Peter Rabbit     | The Tale of Mrs. Tiggy-Winkle | Beatrix Potter
-    | Peter Rabbit     | Jabberwocky                   | Lewis Carroll
-    | Alice Wonderland | The Hunting of the Snark      | Lewis Carroll
-    | Alice Wonderland | Jabberwocky                   | Lewis Carroll
+    | Peter Rabbit     | The Tale of Mrs. Tiggy-Winkle | Beatrix Potter |
+    | Peter Rabbit     | Jabberwocky                   | Lewis Carroll  |
+    | Alice Wonderland | The Hunting of the Snark      | Lewis Carroll  |
+    | Alice Wonderland | Jabberwocky                   | Lewis Carroll  |
 
   - we might also have a table just for detailed student information:
 
-    | id | student_first | student_last | student_email        | phone    | birthday   |
-    | :- | :------------ | :----------- | :------------------- | :------- | :--------- |
-    | 1  | Peter         | Rabbit       | peter@rabbit.com     | 555-6666	| 2001-05-10
-    | 2  | Alice         | Wonderland   | alice@wonderland.com | 555-4444	| 2001-04-02
+    | id   | student_first | student_last | student_email        | phone    | birthday   |
+    | :--- | :------------ | :----------- | :------------------- | :------- | :--------- |
+    | 1    | Peter         | Rabbit       | peter@rabbit.com     | 555-6666 | 2001-05-10 |
+    | 2    | Alice         | Wonderland   | alice@wonderland.com | 555-4444 | 2001-04-02 |
 
   - let's say we decide to remove email from the grades table, because we realize it's redundant with the email in the student details table. This is what we'd have:
 
     | student_name     | test      | grade |
     | :--------------- | :-------- | :---- |
-    | Peter Rabbit     | Nutrition | 95
-    | Peter Rabbit     | Nutrition | 92
-    | Alice Wonderland | Chemistry | 85
-    | Alice Wonderland | Chemistry | 95
+    | Peter Rabbit     | Nutrition | 95    |
+    | Peter Rabbit     | Nutrition | 92    |
+    | Alice Wonderland | Chemistry | 85    |
+    | Alice Wonderland | Chemistry | 95    |
 
   - So the best thing to do is to remove the `student_name` and replace that with `student_id`, since that is a guaranteed unique identifier:
 
-    | id | test      | grade |
-    | :- | :-------- | :---- |
-    | 1  | Nutrition | 95
-    | 2  | Nutrition | 92
-    | 1  | Chemistry | 85
-    | 2  | Chemistry | 95
+    | id   | test      | grade |
+    | :--- | :-------- | :---- |
+    | 1    | Nutrition | 95    |
+    | 2    | Nutrition | 92    |
+    | 1    | Chemistry | 85    |
+    | 2    | Chemistry | 95    |
 
   - we would make the same change to our books table, using `student_id` instead of `student_name`:
 
-    | id | book_title                    | book_author    |
-    | :- | :---------------------------- | :------------- |
-    | 1  | The Tale of Mrs. Tiggy-Winkle | Beatrix Potter
-    | 2  | Jabberwocky                   | Lewis Carroll
-    | 1  | The Hunting of the Snark      | Lewis Carroll
-    | 2  | Jabberwocky                   | Lewis Carroll
+    | id   | book_title                    | book_author    |
+    | :--- | :---------------------------- | :------------- |
+    | 1    | The Tale of Mrs. Tiggy-Winkle | Beatrix Potter |
+    | 2    | Jabberwocky                   | Lewis Carroll  |
+    | 1    | The Hunting of the Snark      | Lewis Carroll  |
+    | 2    | Jabberwocky                   | Lewis Carroll  |
 
   - we could have a table just about books:
 
-    | id | book_title                    | book_author    |
-    | :- | :---------------------------- | :------------- |
-    | 1  | The Tale of Mrs. Tiggy-Winkle | Beatrix Potter
-    | 2  | Jabberwocky                   | Lewis Carroll
-    | 3  | The Hunting of the Snark      | Lewis Carroll
+    | id   | book_title                    | book_author    |
+    | :--- | :---------------------------- | :------------- |
+    | 1    | The Tale of Mrs. Tiggy-Winkle | Beatrix Potter |
+    | 2    | Jabberwocky                   | Lewis Carroll  |
+    | 3    | The Hunting of the Snark      | Lewis Carroll  |
 
   - and then our student_books table becomes:
 
     | student_id | book_id |
     | :--------- | :------ |
-    | 1          | 1
-    | 1          | 2
-    | 2          | 3
-    | 2          | 2
+    | 1          | 1       |
+    | 1          | 2       |
+    | 2          | 3       |
+    | 2          | 2       |
 
 - **JOINing related tables**
   - use the JOIN clause to merge data from related tables, using ON to give the condition on which rows to merge.
@@ -183,15 +183,15 @@
     ```sql
     SELECT * FROM student_grades, students;
     ```
-  
+
   - **implicit inner join**
-  
+
     ```sql
     SELECT * FROM student_grades, students WHERE student_grades.student_id = students.id;
     ```
 
   - **explicit inner join**
-    
+
     ```sql
     SELECT students.first_name, students.last_name, students.email, student_grades.test, student_grades.grade FROM students
     ```
@@ -202,6 +202,15 @@
   SELECT students.first_name, students.last_name, student_projects.title FROM students
   LEFT OUTER JOIN student_projects
   ON students.id = student_projects.student_id;
+  ```
+
+- **Joining tables to themselves with self-joins**
+
+  ```sql
+  SELECT students.first_name, students.last_name, buddies.email AS buddy_email
+  FROM students
+  JOIN students buddies
+  ON students.buddy_id = buddies.id;
   ```
 
 

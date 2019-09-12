@@ -9,3 +9,5 @@
 - [x] [Gradebook](gradebook.sql)
 - [x] [Bobby's Hobbies](bobbys-hobbies.sql)
 - [x] [Customer's orders](customers-orders.sql)
+- [x] [Sequels in SQL](sequels-in-sql.sql)
+- [ ] [FriendBook](friendbook.sql)
