@@ -28,27 +28,13 @@
     - or specify a comma-separated list of columns name before `VALUES`, and only specify those column values in the parentheses after
 
   ```sql
-  CREATE TABLE groceries(id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, aisle INTEGER);
+  CREATE TABLE <table_name>(column1   data_type[(size)], column2   data_type[(size)], ...);
 
-  INSERT INTO groceries VALUES(1, "Bananas", 4, 7);
-  INSERT INTO groceries VALUES(2, "Peanut Butter", 1, 2);
-  INSERT INTO groceries VALUES(3, "Dark chocolate bars", 2, 2);
-  INSERT INTO groceries VALUES(4, "Ice Cream", 1, 12);
-  INSERT INTO groceries VALUES(5, "Cherries", 6, 2);
-  INSERT INTO groceries VALUES(6, "Chocolate syrup", 1, 4);
+  INSERT INTO < table name > (col1,col2...col n) VALUES (value1,value2…value n);
   ```
 
-  |  id   | name                | quantity | aisle |
-  | :---: | :------------------ | :------- | :---- |
-  |   1   | Bananas             | 4        | 7     |
-  |   2   | Peanut Butter       | 1        | 2     |
-  |   3   | Dark chocolate bars | 2        | 2     |
-  |   4   | Ice cream           | 1        | 12    |
-  |   5   | Cherries            | 6        | 2     |
-  |   6   | Chocolate syrup     | 1        | 4     |
-
 - **Querying the table**
-  - use `SELECT` to query your tables
+  - use `SELECT` to query/fetch information from a table
   - to form a query it starts with `SELECT` column name, then `FROM` table name
   - if `*` is specified , you'll get all the column values for each row
   - use `WHERE` and condiiton to filter results
@@ -58,16 +44,16 @@
     - specify `DESC` for "descending order" or `ASC` for "ascending order" after the column name
 
   ```sql
-  SELECT * FROM groceries WHERE aisle > 5 ORDER BY aisle;
+  SELECT *|{[DISTINCT] column|expression [alias]...} FROM <table_name>;
   ```
 
 - **Aggregating data**
-  - aggregate function is useful for making calculations based on columns: `AVG`, `MAX`/`MIN`, `SUM`, and `COUNT`
+  - aggregate function can produce a single value for an entire group or table, useful for making calculations based on columns: `AVG`, `MAX`/`MIN`, `SUM`, and `COUNT`
   - `GROUP BY` to group the selected columns by a particular column value
     - typically used in combination with aggregate functions, so that the results show the result of some aggregation function for rows with particular column values
 
   ```sql
-  SELECT aisle, SUM(quantity) FROM groceries GROUP BY aisle;
+  SELECT column_1, ..., SUM(group_column_name) FROM table_name GROUP BY group_column_name
   ```
 
 
@@ -177,40 +163,53 @@
     | 2          | 2       |
 
 - **JOINing related tables**
-  - use the JOIN clause to merge data from related tables, using ON to give the condition on which rows to merge.
-  - **cross join**
+  - use the `JOIN` clause to merge data from related tables, using `ON` to give the condition on which rows to merge.
+  - **`CROSS JOIN`** produces a result set which is the number of rows in the first table multiplied by the number of rows in the second table if no `WHERE` clause is used along with `CROSS JOIN`.
+    - If `WHERE` clause is used with `CROSS JOIN`, it functions like an `INNER JOIN`
+    - alternative way of achieving the same result is to use column names separated by commas after `SELECT` and mentioning the table names involved, after a `FROM` clause
 
     ```sql
-    SELECT * FROM student_grades, students;
+    SELECT * FROM table1 CROSS JOIN table2;
+
+    -- or
+    SELECT * FROM table1, table2
     ```
 
-  - **implicit inner join**
+  - **`INNER JOIN`** selects all rows from both participating tables as long as there is a match between the columns
+    - `INNER JOIN` is same as `JOIN` clause, combining rows from two or more tables
 
     ```sql
-    SELECT * FROM student_grades, students WHERE student_grades.student_id = students.id;
-    ```
+    SELECT * FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;
 
-  - **explicit inner join**
-
-    ```sql
-    SELECT students.first_name, students.last_name, students.email, student_grades.test, student_grades.grade FROM students
+    -- or
+    SELECT * FROM table1 JOIN table2 ON table1.column_name = table2.column_name;
     ```
 
 - **Joining related tables with left outer joins**
+  - `LEFT JOIN` or `LEFT OUTER JOIN` (specified with LEFT JOIN and ON)  joins two tables and fetches all matching rows of two tables for which the SQL-expression is true, plus rows from the frist table that do not match any row in the second table
 
   ```sql
-  SELECT students.first_name, students.last_name, student_projects.title FROM students
-  LEFT OUTER JOIN student_projects
-  ON students.id = student_projects.student_id;
+  SELECT * FROM table1 LEFT [ OUTER ] JOIN table2 ON table1.column_name = table2.column_name;
   ```
 
 - **Joining tables to themselves with self-joins**
+  - **self join** is a join in which a table is joined with itself, especially when the table has a `FOREIGN KEY` which references its own `PRIMARY KEY`.
+  - joining a table to itself is almost same as that for joining two different tables
+  - to distinguish the column names from one another, aliases for the actual the table name are used, since both the tables have the same name.
+  - table name aliases are defined in the `FROM` clause of the `SELECT` statement
 
   ```sql
-  SELECT students.first_name, students.last_name, buddies.email AS buddy_email
-  FROM students
-  JOIN students buddies
-  ON students.buddy_id = buddies.id;
+  SELECT a.column_name, b.column_name... FROM table1 a, table1 b WHERE a.common_field = b.common_field;
+  ```
+
+- **Combining multiple joins**
+
+  ```sql
+  SELECT a.column_name, b.column_name FROM table3
+  JOIN table2 a
+  ON table3.common_field = a.common_field
+  JOIN table2 b
+  ON table3.common_field = b.common_field;
   ```
 
 
