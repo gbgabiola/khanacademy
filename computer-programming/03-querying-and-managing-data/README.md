@@ -3,6 +3,7 @@
 - [SQL basics](#sql-basics)
 - [More advanced SQL queries](#more-advanced-sql-queries)
 - [Relational queries in SQL](#relational-queries-in-sql)
+- [Modifying databases with SQL](#modifying-databases-with-sql)
 - [Resources](#resources)
 
 
@@ -211,6 +212,28 @@
   JOIN table2 b
   ON table3.common_field = b.common_field;
   ```
+
+- **More efficient SQL with query planning and optimization**
+  - **SQL** is a declarative language, each query declares what we want the SQL engine to do, but it doesn't say how.
+  - As it turns out, the _how_, the "plan", is what affects the efficiency of the queries, however, so it's pretty important
+  - **Why do SQL queries need a plan?**
+
+    ```sql
+    SELECT * FROM books WHERE author = "J K Rowling";
+    ```
+
+    - 2 different ways that SQL could find the results:
+      - **Do a "full table scan"**: look at every single row in the table, return the matching rows
+      - **Create an "index"**: Make a copy of the table sorted by author, then do a binary search to find the row where the author is "J K Rowling", find the matching IDs, then do a binary search on the original table that returns the rows that match the ID
+  - **The lifecycle of a SQL query**
+    - We can think of the SQL engine going through these steps for each query we give it:
+      - **query parser** makes sure that the query is syntactically correct and semantically correct, and returns errors if not. If it's correct, then it turns it into an algebraic expression and passes it to the next step
+      - **query planner** and optimizer does the hard thinking work. It first performs straightforward optimizations. It then considers different "query plans" which may have different optimizations, estimates the cost of each query plan based on the number of rows in the relevant tables, then it picks the optimal plan and passes it on to the next step
+      - **query executor** takes the plan and turns it into operations for the database, returning the results back to us if there are any
+
+
+
+## Modifying databases with SQL
 
 
 ## Resources

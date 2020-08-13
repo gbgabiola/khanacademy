@@ -26,6 +26,7 @@
 
 - [x] [Design a store database](design-a-store-database.sql)
 - [x] [Project Dig](project-dig.sql)
+- [ ] [Famouse people](famous-people.sql)
 
 
 
